@@ -3,6 +3,11 @@ package blackjack;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Kortti-olioita sis‰lt‰v‰ lista
+ *
+ */
+
 public class Korttipakka implements Serializable {
 	
 	/**
@@ -15,6 +20,9 @@ public class Korttipakka implements Serializable {
 		this.pakka = new ArrayList<Kortti>();
 	}
 	
+	/**
+	 * Luo uuden 52 kortin korttipakan
+	 */
 	public void luoPakka() {
 		for(Maa maa : Maa.values()) {
 			for (Arvo arvo : Arvo.values()) {
@@ -23,6 +31,9 @@ public class Korttipakka implements Serializable {
 		}
 	}
 	
+	/**
+	 * Sekoittaa korttipakan
+	 */
 	public void sekoitaPakka() {
 		ArrayList<Kortti> sekoitettu = new ArrayList<>();
 		while(pakka.size() > 0) {
@@ -33,22 +44,46 @@ public class Korttipakka implements Serializable {
 		pakka = sekoitettu;	
 	}
 	
+	/**
+	 * Jakaa pakan ensimm‰isen kortin
+	 * @return Kortti
+	 */
 	public Kortti jaaKortti() {
 		return pakka.remove(0);
 	}
 	
+	
+	/**
+	 * Palauttaa pakkaan viimeisimp‰n‰ lis‰tyn kortin
+	 * @return Kortti
+	 */
 	public Kortti viimeinenKortti() {
 		return pakka.get(pakka.size() -1);
 	}
 	
+	
+	/**
+	 * Lis‰‰ korttipakkaan uuden kortin
+	 * @param Kortti
+	 */
 	public void lisaaKortti(Kortti kortti) {
 		this.pakka.add(kortti);
 	}
 	
+	
+	/**
+	 * Palauttaa korttipakassa olevien korttien m‰‰r‰n
+	 * @return int
+	 */
 	public int annaPakanKoko() {
 		return pakka.size();
 	}
 	
+	
+	/**
+	 * Asettaa korttien arvot ja laskee pakan korttien arvot yhteen. M‰‰rittelee myˆs miss‰ tilanteessa ‰ss‰ tulkitaan arvolla 1 tai 11
+	 * @return int
+	 */
 	public int korttienArvo() {
 		int kokonaisArvo = 0;
 		int ‰ssi‰ = 0;

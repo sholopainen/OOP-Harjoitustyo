@@ -1,16 +1,21 @@
 package blackjack;
 
+/**
+ * Luokasta voidaan muodostaa uusia Jakaja-instansseja
+ *
+ */
+
 public class Jakaja extends Pelaaja {
 	
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public Jakaja(){
 		super("Jakaja");
 	}
+	
+	/**
+	 * Jakajan vuoron pelaus. Tulostaa jakajan k‰den ja ottaa lis‰‰ kortteja mik‰li yhteistulos on alle 17
+	 */
 
 	@Override
 	public void pelaaVuoro(Korttipakka kp) {

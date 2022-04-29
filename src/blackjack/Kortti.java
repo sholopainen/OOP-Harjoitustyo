@@ -2,6 +2,11 @@ package blackjack;
 
 import java.io.Serializable;
 
+/**
+ * Luokasta voidaan luoda pelikortti-olioita
+ *
+ */
+
 public class Kortti implements Serializable {
 	
 	/**
